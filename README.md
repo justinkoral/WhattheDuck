@@ -1,0 +1,247 @@
+memory D SELECT * FROM read_csv_auto('/Users/vanta/Projects/duckdb/whattheduck/pnas.2023170118.sd01.csv');
+┌────────────────────────┬───────────────────────────┬──────────────────┬────────────────────────────────────────┬──────────────┬────────────────────┬──────────────┬────────────────┬──────────────────┐
+│      Common name       │      Scientific name      │      Order       │                 Family                 │ 95% Lower CI │ Abundance estimate │ 95% Upper CI │ Range adjusted │ Training species │
+│        varchar         │          varchar          │     varchar      │                varchar                 │    int64     │       int64        │    int64     │    boolean     │     boolean      │
+├────────────────────────┼───────────────────────────┼──────────────────┼────────────────────────────────────────┼──────────────┼────────────────────┼──────────────┼────────────────┼──────────────────┤
+│ House Sparrow          │ Passer domesticus         │ Passeriformes    │ Passeridae (Old World Sparrows)        │    691718494 │         1618744682 │   3795135209 │ true           │ true             │
+│ European Starling      │ Sturnus vulgaris          │ Passeriformes    │ Sturnidae (Starlings)                  │    428117239 │         1288846040 │   3986525008 │ true           │ true             │
+│ Ring-billed Gull       │ Larus delawarensis        │ Charadriiformes  │ Laridae (Gulls, Terns, and Skimmers)   │     22703666 │         1229072620 │  61036248728 │ true           │ true             │
+│ Barn Swallow           │ Hirundo rustica           │ Passeriformes    │ Hirundinidae (Swallows)                │    368223376 │         1076122004 │   3248000928 │ true           │ true             │
+│ Glaucous Gull          │ Larus hyperboreus         │ Charadriiformes  │ Laridae (Gulls, Terns, and Skimmers)   │     11030070 │          949879030 │  78302779623 │ true           │ true             │
+│ Alder Flycatcher       │ Empidonax alnorum         │ Passeriformes    │ Tyrannidae (Tyrant Flycatchers)        │     52035587 │          896919155 │  16407841925 │ true           │ true             │
+│ Black-legged Kittiwake │ Rissa tridactyla          │ Charadriiformes  │ Laridae (Gulls, Terns, and Skimmers)   │     15934990 │          815654031 │  44045847760 │ true           │ true             │
+│ Horned Lark            │ Eremophila alpestris      │ Passeriformes    │ Alaudidae (Larks)                      │    114183681 │          770962832 │   4980210996 │ true           │ true             │
+│ Sooty Tern             │ Onychoprion fuscatus      │ Charadriiformes  │ Laridae (Gulls, Terns, and Skimmers)   │      8514234 │          711704137 │  55431870239 │ true           │ false            │
+│ Savannah Sparrow       │ Passerculus sandwichensis │ Passeriformes    │ Passerellidae (New World Sparrows)     │    105545295 │          599661514 │   3327074417 │ true           │ true             │
+│ American Robin         │ Turdus migratorius        │ Passeriformes    │ Turdidae (Thrushes and Allies)         │    141360196 │          561290332 │   2187840521 │ true           │ true             │
+│ Blue-gray Gnatcatcher  │ Polioptila caerulea       │ Passeriformes    │ Polioptilidae (Gnatcatchers)           │     50969759 │          542518652 │   5789385556 │ false          │ true             │
+│ Red-winged Blackbird   │ Agelaius phoeniceus       │ Passeriformes    │ Icteridae (Troupials and Allies)       │    100159133 │          418284484 │   1739096158 │ true           │ true             │
+│ Rook                   │ Corvus frugilegus         │ Passeriformes    │ Corvidae (Crows, Jays, and Magpies)    │     12075483 │          355015538 │  10440316620 │ true           │ true             │
+│ Eurasian Blackbird     │ Turdus merula             │ Passeriformes    │ Turdidae (Thrushes and Allies)         │     12798079 │          354433630 │  10411809875 │ true           │ true             │
+│ White Wagtail          │ Motacilla alba            │ Passeriformes    │ Motacillidae (Wagtails and Pipits)     │      9471018 │          353854467 │  12394539578 │ true           │ true             │
+│ Common Wood-Pigeon     │ Columba palumbus          │ Columbiformes    │ Columbidae (Pigeons and Doves)         │     13033917 │          334511213 │   9223836421 │ true           │ true             │
+│ Golden-crowned Kinglet │ Regulus satrapa           │ Passeriformes    │ Regulidae (Kinglets)                   │     33276184 │          303330127 │   2838871281 │ true           │ true             │
+│ Swainson's Thrush      │ Catharus ustulatus        │ Passeriformes    │ Turdidae (Thrushes and Allies)         │     28089824 │          301610196 │   3042019134 │ false          │ true             │
+│ Rock Pigeon            │ Columba livia             │ Columbiformes    │ Columbidae (Pigeons and Doves)         │    122250173 │          285765338 │    661240316 │ true           │ true             │
+│      ·                 │       ·                   │       ·          │               ·                        │            · │                  · │           ·  │  ·             │  ·               │
+│      ·                 │       ·                   │       ·          │               ·                        │            · │                  · │           ·  │  ·             │  ·               │
+│      ·                 │       ·                   │       ·          │               ·                        │            · │                  · │           ·  │  ·             │  ·               │
+│ Grenada Dove           │ Leptotila wellsi          │ Columbiformes    │ Columbidae (Pigeons and Doves)         │            0 │                  2 │          180 │ true           │ false            │
+│ Junin Tapaculo         │ Scytalopus gettyae        │ Passeriformes    │ Rhinocryptidae (Tapaculos)             │            0 │                  2 │          186 │ true           │ false            │
+│ Orinoco Softtail       │ Thripophaga cherriei      │ Passeriformes    │ Furnariidae (Ovenbirds and Woodcreepe… │            0 │                  2 │          181 │ true           │ false            │
+│ Tacarcuna Tapaculo     │ Scytalopus panamensis     │ Passeriformes    │ Rhinocryptidae (Tapaculos)             │            0 │                  2 │          183 │ true           │ false            │
+│ Whistling Warbler      │ Catharopeza bishopi       │ Passeriformes    │ Parulidae (New World Warblers)         │            0 │                  2 │          182 │ true           │ false            │
+│ Auckland Islands Rail  │ Lewinia muelleri          │ Gruiformes       │ Rallidae (Rails, Gallinules, and Coot… │            0 │                  1 │          108 │ true           │ false            │
+│ Cocos Cuckoo           │ Coccyzus ferrugineus      │ Cuculiformes     │ Cuculidae (Cuckoos)                    │            0 │                  1 │          111 │ true           │ false            │
+│ Iriomote Tit           │ Sittiparus olivaceus      │ Passeriformes    │ Paridae (Tits, Chickadees, and Titmic… │            0 │                  1 │          107 │ true           │ false            │
+│ Little Spotted Kiwi    │ Apteryx owenii            │ Apterygiformes   │ Apterygidae (Kiwis)                    │            0 │                  1 │           93 │ true           │ false            │
+│ Mangrove Finch         │ Camarhynchus heliobates   │ Passeriformes    │ Thraupidae (Tanagers and Allies)       │            0 │                  1 │           50 │ true           │ false            │
+│ Maui Parrotbill        │ Pseudonestor xanthophrys  │ Passeriformes    │ Fringillidae (Finches, Euphonias, and… │            0 │                  1 │           97 │ true           │ true             │
+│ Montserrat Oriole      │ Icterus oberi             │ Passeriformes    │ Icteridae (Troupials and Allies)       │            0 │                  1 │           87 │ true           │ false            │
+│ Pirre Warbler          │ Basileuterus ignotus      │ Passeriformes    │ Parulidae (New World Warblers)         │            0 │                  1 │           99 │ true           │ false            │
+│ Plain-flanked Rail     │ Rallus wetmorei           │ Gruiformes       │ Rallidae (Rails, Gallinules, and Coot… │            0 │                  1 │          114 │ true           │ false            │
+│ Tacarcuna Wood-Quail   │ Odontophorus dialeucos    │ Galliformes      │ Odontophoridae (New World Quail)       │            0 │                  1 │           75 │ true           │ false            │
+│ Akekee                 │ Loxops caeruleirostris    │ Passeriformes    │ Fringillidae (Finches, Euphonias, and… │            0 │                  0 │            9 │ true           │ false            │
+│ Bugun Liocichla        │ Liocichla bugunorum       │ Passeriformes    │ Leiothrichidae (Laughingthrushes and … │            0 │                  0 │           36 │ true           │ true             │
+│ Gorgeted Puffleg       │ Eriocnemis isabellae      │ Caprimulgiformes │ Trochilidae (Hummingbirds)             │            0 │                  0 │           16 │ true           │ false            │
+│ San Andres Vireo       │ Vireo caribaeus           │ Passeriformes    │ Vireonidae (Vireos, Shrike-Babblers, … │            0 │                  0 │           45 │ true           │ true             │
+│ Snares Island Snipe    │ Coenocorypha huegeli      │ Charadriiformes  │ Scolopacidae (Sandpipers and Allies)   │            0 │                  0 │           14 │ true           │ false            │
+└────────────────────────┴───────────────────────────┴──────────────────┴────────────────────────────────────────┴──────────────┴────────────────────┴──────────────┴────────────────┴──────────────────┘
+  9700 rows (40 shown)                                                                    use .last to show entire result                                                                     9 columns
+memory D CREATE TABLE ducks_ina_row AS SELECT * FROM read_csv_auto('/Users/vanta/Projects/duckdb/whattheduck/pnas.2023170118.sd01.csv');
+memory D SUMMARIZE ducks_ina_row;
+┌────────────────────┬─────────────┬────────────────────────┬───────────────────────┬───────────────┬────────────────────┬───────────────────┬─────────┬──────────┬───────────┬───────┬─────────────────┐
+│    column_name     │ column_type │          min           │          max          │ approx_unique │        avg         │        std        │   q25   │   q50    │    q75    │ count │ null_percentage │
+│      varchar       │   varchar   │        varchar         │        varchar        │     int64     │      varchar       │      varchar      │ varchar │ varchar  │  varchar  │ int64 │  decimal(9,2)   │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Common name        │ VARCHAR     │ Abbott's Babbler       │ d'Orbigny's Chat-Tyra │         10455 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+│                    │             │                        │ nt                    │               │                    │                   │         │          │           │       │                 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Scientific name    │ VARCHAR     │ Abeillia abeillei      │ Zosterornis whitehead │         10487 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+│                    │             │                        │ i                     │               │                    │                   │         │          │           │       │                 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Order              │ VARCHAR     │ Accipitriformes        │ Trogoniformes         │            42 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Family             │ VARCHAR     │ Acanthisittidae (New Z │ Zosteropidae (White-e │           232 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+│                    │             │ ealand Wrens)          │ yes, Yuhinas, and All │               │                    │                   │         │          │           │       │                 │
+│                    │             │                        │ ies)                  │               │                    │                   │         │          │           │       │                 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ 95% Lower CI       │ BIGINT      │ 0                      │ 691718494             │          5832 │ 403561.85103092785 │ 9693395.097574065 │ 839     │ 5004     │ 21634     │  9700 │            0.00 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Abundance estimate │ BIGINT      │ 0                      │ 1618744682            │          8983 │ 5207852.766391752  │ 38383729.0323915  │ 75656   │ 453424   │ 1924682   │  9700 │            0.00 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ 95% Upper CI       │ BIGINT      │ 9                      │ 78302779623           │          9424 │ 283417096.69082475 │ 1512318718.793879 │ 6833903 │ 40405094 │ 168542609 │  9700 │            0.00 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Range adjusted     │ BOOLEAN     │ false                  │ true                  │             2 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+├────────────────────┼─────────────┼────────────────────────┼───────────────────────┼───────────────┼────────────────────┼───────────────────┼─────────┼──────────┼───────────┼───────┼─────────────────┤
+│ Training species   │ BOOLEAN     │ false                  │ true                  │             2 │ NULL               │ NULL              │ NULL    │ NULL     │ NULL      │  9700 │            0.00 │
+└────────────────────┴─────────────┴────────────────────────┴───────────────────────┴───────────────┴────────────────────┴───────────────────┴─────────┴──────────┴───────────┴───────┴─────────────────┘
+memory D SELECT COUNT(*) AS anatidae_count FROM ducks_ina_row WHERE "Family" ILIKE '%Anatidae%';
+┌────────────────┐
+│ anatidae_count │
+│     int64      │
+├────────────────┤
+│            163 │
+└────────────────┘
+memory D SELECT * FROM ducks_ina_row WHERE "Family" ILIKE '%Anatidae%';
+┌─────────────────────────────┬─────────────────────────────┬──────────────┬─────────────────────────────────────┬──────────────┬────────────────────┬──────────────┬────────────────┬──────────────────┐
+│         Common name         │       Scientific name       │    Order     │               Family                │ 95% Lower CI │ Abundance estimate │ 95% Upper CI │ Range adjusted │ Training species │
+│           varchar           │           varchar           │   varchar    │               varchar               │    int64     │       int64        │    int64     │    boolean     │     boolean      │
+├─────────────────────────────┼─────────────────────────────┼──────────────┼─────────────────────────────────────┼──────────────┼────────────────────┼──────────────┼────────────────┼──────────────────┤
+│ Mallard                     │ Anas platyrhynchos          │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      2617837 │          167717060 │  12554374607 │ true           │ false            │
+│ Northern Pintail            │ Anas acuta                  │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      1297110 │           98587756 │   7858009235 │ true           │ false            │
+│ Ring-necked Duck            │ Aythya collaris             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      1268632 │           91130489 │   6818416055 │ true           │ true             │
+│ Canada Goose                │ Branta canadensis           │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      1059066 │           87184210 │   6021713165 │ true           │ false            │
+│ Snow Goose                  │ Anser caerulescens          │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       964712 │           83913086 │   6496054597 │ true           │ false            │
+│ Greater White-fronted Goose │ Anser albifrons             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       951129 │           77365597 │   6074379970 │ true           │ false            │
+│ Graylag Goose               │ Anser anser                 │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      1418063 │           64105549 │   2818113159 │ true           │ true             │
+│ Green-winged Teal           │ Anas crecca                 │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      3352722 │           56760899 │   1037032024 │ true           │ true             │
+│ Garganey                    │ Spatula querquedula         │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       727923 │           53464613 │   4396980157 │ true           │ true             │
+│ Eurasian Wigeon             │ Mareca penelope             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │      1463887 │           52349060 │   1892043730 │ true           │ true             │
+│ White-faced Whistling-Duck  │ Dendrocygna viduata         │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       560120 │           49399310 │   4306385570 │ true           │ false            │
+│ Ruddy Shelduck              │ Tadorna ferruginea          │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       579019 │           46876277 │   3622613733 │ true           │ false            │
+│ Long-tailed Duck            │ Clangula hyemalis           │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       486728 │           39986676 │   3535926218 │ true           │ false            │
+│ Tufted Duck                 │ Aythya fuligula             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       900666 │           35898153 │   1329567265 │ true           │ true             │
+│ Common Merganser            │ Mergus merganser            │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       380860 │           35001347 │   2757414214 │ true           │ false            │
+│ Ferruginous Duck            │ Aythya nyroca               │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       426079 │           34714594 │   2719733911 │ true           │ true             │
+│ Blue-winged Teal            │ Spatula discors             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       411047 │           33909591 │   2911421943 │ true           │ false            │
+│ American Wigeon             │ Mareca americana            │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       479935 │           33830766 │   2517019797 │ true           │ false            │
+│ Black Swan                  │ Cygnus atratus              │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       379517 │           32603918 │   2622388211 │ true           │ false            │
+│ Red-breasted Merganser      │ Mergus serrator             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │       470094 │           31258494 │   2205220535 │ true           │ true             │
+│      ·                      │        ·                    │      ·       │                  ·                  │           ·  │                ·   │         ·    │  ·             │  ·               │
+│      ·                      │        ·                    │      ·       │                  ·                  │           ·  │                ·   │         ·    │  ·             │  ·               │
+│      ·                      │        ·                    │      ·       │                  ·                  │           ·  │                ·   │         ·    │  ·             │  ·               │
+│ Torrent Duck                │ Merganetta armata           │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         4609 │             420325 │     40554202 │ false          │ false            │
+│ Spectacled Duck             │ Speculanas specularis       │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         4561 │             386973 │     34546855 │ true           │ false            │
+│ Meller's Duck               │ Anas melleri                │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         4405 │             368510 │     34102680 │ true           │ false            │
+│ Flightless Steamer-Duck     │ Tachyeres pteneres          │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         3989 │             363267 │     33156320 │ true           │ false            │
+│ Maccoa Duck                 │ Oxyura maccoa               │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         4053 │             361501 │     33192050 │ true           │ false            │
+│ Spectacled Eider            │ Somateria fischeri          │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         3740 │             327035 │     27891924 │ true           │ false            │
+│ Bernier's Teal              │ Anas bernieri               │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         2108 │             157799 │     10416006 │ true           │ true             │
+│ Blue Duck                   │ Hymenolaimus malacorhynchos │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         1375 │             132966 │     12007395 │ false          │ false            │
+│ Hawaiian Duck               │ Anas wyvilliana             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │         1154 │              95761 │      8960367 │ true           │ false            │
+│ Salvadori's Teal            │ Salvadorina waigiuensis     │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          718 │              67190 │      5978755 │ true           │ false            │
+│ White-winged Duck           │ Asarcornis scutulata        │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          441 │              37919 │      3629013 │ true           │ false            │
+│ White-headed Steamer-Duck   │ Tachyeres leucocephalus     │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          206 │              20274 │      1787997 │ true           │ false            │
+│ Falkland Steamer-Duck       │ Tachyeres brachypterus      │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          257 │              18577 │      1559779 │ true           │ false            │
+│ Brown Teal                  │ Anas chlorotis              │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          173 │              15915 │      1402282 │ true           │ false            │
+│ Brazilian Merganser         │ Mergus octosetaceus         │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          159 │              14018 │      1365649 │ false          │ true             │
+│ Hawaiian Goose              │ Branta sandvicensis         │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │           51 │               2824 │       159074 │ true           │ true             │
+│ Andaman Teal                │ Anas albogularis            │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │          773 │               1784 │         4108 │ true           │ true             │
+│ Madagascar Pochard          │ Aythya innotata             │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │           41 │                268 │         1820 │ true           │ true             │
+│ Auckland Islands Teal       │ Anas aucklandica            │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │            0 │                 42 │         3367 │ true           │ false            │
+│ Campbell Islands Teal       │ Anas nesiotis               │ Anseriformes │ Anatidae (Ducks, Geese, and Waterf… │            0 │                  8 │          774 │ true           │ false            │
+└─────────────────────────────┴─────────────────────────────┴──────────────┴─────────────────────────────────────┴──────────────┴────────────────────┴──────────────┴────────────────┴──────────────────┘
+  163 rows (40 shown)                                                                     use .last to show entire result                                                                     9 columns
+memory D MIN("Abundance estimate") AS min_abundance,
+         SELECT 
+             MIN("Abundance estimate") AS min_abundance,
+             ROUND(AVG("Abundance estimate"), 0) AS avg_abundance,
+             MAX("Abundance estimate") AS max_abundance,
+             SUM("Abundance estimate") AS total_anatidae_population
+         FROM ducks_ina_row
+         WHERE "Family" ILIKE '%Anatidae%';
+Parser Error:
+syntax error at or near "MIN"
+
+LINE 1: MIN("Abundance estimate") AS min_abundance,
+        ^
+memory D WHERE "Family" ILIKE '%Anatidae%';
+Parser Error:
+syntax error at or near "WHERE"
+
+LINE 1: WHERE "Family" ILIKE '%Anatidae%';
+        ^
+memory D SELECT
+         MIN("Abundance estimate") AS min_abundance,
+         ROUND(AVG("Abundance estimate"), 0) AS avg_abundance,
+         MAX("Abundance estimate") AS max_abundance,
+         SUM("Abundance estimate") AS total_anatidae_population
+         FROM ducks_ina_row
+         WHERE "Family" ILIKE '%Anatidae%';
+┌───────────────┬───────────────┬───────────────┬───────────────────────────┐
+│ min_abundance │ avg_abundance │ max_abundance │ total_anatidae_population │
+│     int64     │    double     │     int64     │          int128           │
+├───────────────┼───────────────┼───────────────┼───────────────────────────┤
+│             8 │    14447327.0 │     167717060 │                2354914261 │
+└───────────────┴───────────────┴───────────────┴───────────────────────────┘
+memory D SELECT
+         "Training species",
+         "Range adjusted",
+         COUNT(*) AS species_count,
+         SUM("Abundance estimate") AS total_abundance
+         FROM ducks_ina_row
+         WHERE "Family" ILIKE '%Anatidae%'
+         GROUP BY ALL;
+┌──────────────────┬────────────────┬───────────────┬─────────────────┐
+│ Training species │ Range adjusted │ species_count │ total_abundance │
+│     boolean      │    boolean     │     int64     │     int128      │
+├──────────────────┼────────────────┼───────────────┼─────────────────┤
+│ false            │ false          │            17 │        55488306 │
+│ true             │ true           │            22 │       553168724 │
+│ false            │ true           │           123 │      1746243213 │
+│ true             │ false          │             1 │           14018 │
+└──────────────────┼────────────────┴───────────────┴─────────────────┘
+memory D 
+memory D SELECT
+         "Common name",
+         "Scientific name",
+         "Abundance estimate",
+         CASE
+         WHEN "Abundance estimate" > 10000000 THEN 'Extremely Abundant (>10M)'
+         WHEN "Abundance estimate" BETWEEN 100000 AND 10000000 THEN 'Moderate (100k - 10M)'
+         ELSE 'Rare / Threatened (<100k)'
+         END AS abundance_tier
+         FROM ducks_ina_row
+         WHERE "Family" ILIKE '%Anatidae%'
+         ORDER BY "Abundance estimate" DESC;
+┌─────────────────────────────┬─────────────────────────────┬────────────────────┬───────────────────────────┐
+│         Common name         │       Scientific name       │ Abundance estimate │      abundance_tier       │
+│           varchar           │           varchar           │       int64        │          varchar          │
+├─────────────────────────────┼─────────────────────────────┼────────────────────┼───────────────────────────┤
+│ Mallard                     │ Anas platyrhynchos          │          167717060 │ Extremely Abundant (>10M) │
+│ Northern Pintail            │ Anas acuta                  │           98587756 │ Extremely Abundant (>10M) │
+│ Ring-necked Duck            │ Aythya collaris             │           91130489 │ Extremely Abundant (>10M) │
+│ Canada Goose                │ Branta canadensis           │           87184210 │ Extremely Abundant (>10M) │
+│ Snow Goose                  │ Anser caerulescens          │           83913086 │ Extremely Abundant (>10M) │
+│ Greater White-fronted Goose │ Anser albifrons             │           77365597 │ Extremely Abundant (>10M) │
+│ Graylag Goose               │ Anser anser                 │           64105549 │ Extremely Abundant (>10M) │
+│ Green-winged Teal           │ Anas crecca                 │           56760899 │ Extremely Abundant (>10M) │
+│ Garganey                    │ Spatula querquedula         │           53464613 │ Extremely Abundant (>10M) │
+│ Eurasian Wigeon             │ Mareca penelope             │           52349060 │ Extremely Abundant (>10M) │
+│ White-faced Whistling-Duck  │ Dendrocygna viduata         │           49399310 │ Extremely Abundant (>10M) │
+│ Ruddy Shelduck              │ Tadorna ferruginea          │           46876277 │ Extremely Abundant (>10M) │
+│ Long-tailed Duck            │ Clangula hyemalis           │           39986676 │ Extremely Abundant (>10M) │
+│ Tufted Duck                 │ Aythya fuligula             │           35898153 │ Extremely Abundant (>10M) │
+│ Common Merganser            │ Mergus merganser            │           35001347 │ Extremely Abundant (>10M) │
+│ Ferruginous Duck            │ Aythya nyroca               │           34714594 │ Extremely Abundant (>10M) │
+│ Blue-winged Teal            │ Spatula discors             │           33909591 │ Extremely Abundant (>10M) │
+│ American Wigeon             │ Mareca americana            │           33830766 │ Extremely Abundant (>10M) │
+│ Black Swan                  │ Cygnus atratus              │           32603918 │ Extremely Abundant (>10M) │
+│ Red-breasted Merganser      │ Mergus serrator             │           31258494 │ Extremely Abundant (>10M) │
+│      ·                      │        ·                    │                ·   │           ·               │
+│      ·                      │        ·                    │                ·   │           ·               │
+│      ·                      │        ·                    │                ·   │           ·               │
+│ Torrent Duck                │ Merganetta armata           │             420325 │ Moderate (100k - 10M)     │
+│ Spectacled Duck             │ Speculanas specularis       │             386973 │ Moderate (100k - 10M)     │
+│ Meller's Duck               │ Anas melleri                │             368510 │ Moderate (100k - 10M)     │
+│ Flightless Steamer-Duck     │ Tachyeres pteneres          │             363267 │ Moderate (100k - 10M)     │
+│ Maccoa Duck                 │ Oxyura maccoa               │             361501 │ Moderate (100k - 10M)     │
+│ Spectacled Eider            │ Somateria fischeri          │             327035 │ Moderate (100k - 10M)     │
+│ Bernier's Teal              │ Anas bernieri               │             157799 │ Moderate (100k - 10M)     │
+│ Blue Duck                   │ Hymenolaimus malacorhynchos │             132966 │ Moderate (100k - 10M)     │
+│ Hawaiian Duck               │ Anas wyvilliana             │              95761 │ Rare / Threatened (<100k) │
+│ Salvadori's Teal            │ Salvadorina waigiuensis     │              67190 │ Rare / Threatened (<100k) │
+│ White-winged Duck           │ Asarcornis scutulata        │              37919 │ Rare / Threatened (<100k) │
+│ White-headed Steamer-Duck   │ Tachyeres leucocephalus     │              20274 │ Rare / Threatened (<100k) │
+│ Falkland Steamer-Duck       │ Tachyeres brachypterus      │              18577 │ Rare / Threatened (<100k) │
+│ Brown Teal                  │ Anas chlorotis              │              15915 │ Rare / Threatened (<100k) │
+│ Brazilian Merganser         │ Mergus octosetaceus         │              14018 │ Rare / Threatened (<100k) │
+│ Hawaiian Goose              │ Branta sandvicensis         │               2824 │ Rare / Threatened (<100k) │
+│ Andaman Teal                │ Anas albogularis            │               1784 │ Rare / Threatened (<100k) │
+│ Madagascar Pochard          │ Aythya innotata             │                268 │ Rare / Threatened (<100k) │
+│ Auckland Islands Teal       │ Anas aucklandica            │                 42 │ Rare / Threatened (<100k) │
+│ Campbell Islands Teal       │ Anas nesiotis               │                  8 │ Rare / Threatened (<100k) │
+└─────────────────────────────┴─────────────────────────────┴────────────────────┴───────────────────────────┘
+  163 rows (40 shown)                       use .last to show entire result                        4 columns
+memory D
