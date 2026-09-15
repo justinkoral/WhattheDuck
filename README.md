@@ -181,7 +181,7 @@ memory D SELECT
 │ true             │ true           │            22 │       553168724 │
 │ false            │ true           │           123 │      1746243213 │
 │ true             │ false          │             1 │           14018 │
-└──────────────────┼────────────────┴───────────────┴─────────────────┘
+└──────────────────┴────────────────┴───────────────┴─────────────────┘
 memory D 
 memory D SELECT
          "Common name",
@@ -244,4 +244,4 @@ memory D SELECT
 │ Campbell Islands Teal       │ Anas nesiotis               │                  8 │ Rare / Threatened (<100k) │
 └─────────────────────────────┴─────────────────────────────┴────────────────────┴───────────────────────────┘
   163 rows (40 shown)                       use .last to show entire result                        4 columns
-memory D
+memory D 
